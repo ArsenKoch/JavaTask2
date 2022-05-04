@@ -1,21 +1,35 @@
+/**
+ * Создайте абстрактный класс Building. Определите у класса свойства:
+ *
+ * название,
+ * адрес,
+ * год постройки,
+ * имя архитектора,
+ * является ли культурным памятником.
+ * Унаследуйте у от него 6 классов: Library, House, PoliceDepartment, University, ShoppingCenter, HighRiseBuilding.
+ *
+ * Добавьте каждому классу наследнику по 2-3 свойства и 2-3 метода,
+ * которые соответствовали бы тематике здания.
+ * Так же необходимо во всех классах сгенерировать метод toString()
+ */
 public abstract class Building {
     protected String name;
-    protected String addres;
+    protected String address;
     protected int since;
-    protected String autor;
+    protected String author;
     protected boolean culturalMonument;
 
-    Building(String name, String addres, int since, String autor, boolean culturalMonument) {
+    Building(String name, String address, int since, String author, boolean culturalMonument) {
         this.name = name;
-        this.addres = addres;
+        this.address = address;
         this.since = since;
-        this.autor = autor;
+        this.author = author;
         this.culturalMonument = culturalMonument;
     }
 
     @Override
     public String toString() {
-        return this.name + " " + this.addres + " " + this.since + " " + this.autor + " " + (this.culturalMonument ? "Yes" : "No");
+        return this.name + " " + this.address + " " + this.since + " " + this.author + " " + (this.culturalMonument ? "Yes" : "No");
 
     }
 
