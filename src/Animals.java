@@ -1,11 +1,16 @@
- class Animals {
-     protected String type;
-     protected String name;
-     private int age;
-     private float weight;
-     private boolean isFly;
-     private boolean isWalk;
-     private boolean isSwim;
+class Animals {
+    protected String type;
+    protected String name;
+    final private int age;
+    final private float weight;
+    final private boolean isFly;
+    final private boolean isWalk;
+    final private boolean isSwim;
+
+    {
+        name = "No name";
+        type = "No type";
+    }
 
     Animals(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
