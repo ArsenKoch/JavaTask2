@@ -1,13 +1,13 @@
 /**
  * Создайте абстрактный класс Building. Определите у класса свойства:
- *
+ * <p>
  * название,
  * адрес,
  * год постройки,
  * имя архитектора,
  * является ли культурным памятником.
  * Унаследуйте у от него 6 классов: Library, House, PoliceDepartment, University, ShoppingCenter, HighRiseBuilding.
- *
+ * <p>
  * Добавьте каждому классу наследнику по 2-3 свойства и 2-3 метода,
  * которые соответствовали бы тематике здания.
  * Так же необходимо во всех классах сгенерировать метод toString()
@@ -35,9 +35,9 @@ public abstract class Building {
 
 }
 
-class Library extends Building {
-    int books;
-    int personal;
+class Library extends Building implements SocialHouse {
+    protected int books;
+    protected int personal;
 
     Library() {
         super("N.Pushkina", "Karla Marksa", 2005, "Arsen K.", true);
@@ -66,11 +66,21 @@ class Library extends Building {
     void comeToLibrary() {
         System.out.println("Come to Library, if you cool.");
     }
+
+    @Override
+    public void isCool() {
+        System.out.println("It's good library , because we haven't womans. ");
+    }
+
+    @Override
+    public void print4() {
+        System.out.println("Boys don't read '1984'.");
+    }
 }
 
-class House extends Building {
-    int neighbour;
-    String nameHome;
+class House extends Building implements LivingHouse {
+    protected int neighbour;
+    protected String nameHome;
 
     House() {
         super("30", "16 line", 1938, "Kamov", true);
@@ -99,11 +109,21 @@ class House extends Building {
     void goodBye() {
         System.out.println("Goodbye(");
     }
+
+    @Override
+    public void rentThisPlace() {
+        System.out.println("It' s living fuckin house!");
+    }
+
+    @Override
+    public void print2() {
+        System.out.println("Understand this ");
+    }
 }
 
 class PoliceDepartment extends Building {
-    int criminals;
-    int guns;
+    protected int criminals;
+    protected int guns;
 
     PoliceDepartment() {
         super("Sovetskaya", "Sovetskaya, 30", 2006, "Trunov D.", false);
@@ -135,8 +155,8 @@ class PoliceDepartment extends Building {
 }
 
 class University extends Building {
-    int students;
-    String nameDekan;
+    protected int students;
+    protected String nameDekan;
 
     University() {
         super("DSTU", "Gagarina,1", 1935, "Meshi", true);
@@ -173,8 +193,8 @@ class ShoppingCenter extends Building {
         super("MegaMag", "Chexova", 2015, "M.Tokarev", false);
     }
 
-    int shops;
-    int foodCourts;
+    protected int shops;
+    protected int foodCourts;
 
     public int getShops() {
         return shops;
@@ -206,8 +226,8 @@ class HighRiseBuilding extends Building {
         super("Moscow-City", "Moscow", 2015, "Oganes G.", false);
     }
 
-    int floor;
-    boolean livingWomanSex;
+    protected int floor;
+    protected boolean livingWomanSex;
 
     public int getFloor() {
         return floor;
@@ -244,6 +264,8 @@ class Main13 {
         System.out.println("Number of personal : " + library.getPersonal());
         library.bookRead();
         library.comeToLibrary();
+        library.isCool();
+        library.print4();
 
         System.out.println(" ");
 
@@ -255,6 +277,8 @@ class Main13 {
         System.out.println("Neighbour : " + house.getNeighbour());
         house.hello();
         house.goodBye();
+        house.rentThisPlace();
+        house.print2();
 
         System.out.println(" ");
 
