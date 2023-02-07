@@ -1,17 +1,4 @@
-/**
- * Создайте абстрактный класс Building. Определите у класса свойства:
- * <p>
- * название,
- * адрес,
- * год постройки,
- * имя архитектора,
- * является ли культурным памятником.
- * Унаследуйте у от него 6 классов: Library, House, PoliceDepartment, University, ShoppingCenter, HighRiseBuilding.
- * <p>
- * Добавьте каждому классу наследнику по 2-3 свойства и 2-3 метода,
- * которые соответствовали бы тематике здания.
- * Так же необходимо во всех классах сгенерировать метод toString()
- */
+
 public abstract class Building {
     protected String name;
     protected String address;
@@ -30,94 +17,6 @@ public abstract class Building {
     @Override
     public String toString() {
         return this.name + " " + this.address + " " + this.since + " " + this.author + " " + (this.culturalMonument ? "Yes" : "No");
-
-    }
-
-}
-
-class Library extends Building implements SocialHouse {
-    protected int books;
-    protected int personal;
-
-    Library() {
-        super("N.Pushkina", "Karla Marksa", 2005, "Arsen K.", true);
-    }
-
-    public int getBooks() {
-        return books;
-    }
-
-    public void setBooks(int books) {
-        this.books = books;
-    }
-
-    public void setPersonal(int personal) {
-        this.personal = personal;
-    }
-
-    public int getPersonal() {
-        return personal;
-    }
-
-    void bookRead() {
-        System.out.println("Read books, brothers!");
-    }
-
-    void comeToLibrary() {
-        System.out.println("Come to Library, if you cool.");
-    }
-
-    @Override
-    public void isCool() {
-        System.out.println("It's good library , because we haven't womans. ");
-    }
-
-    @Override
-    public void print4() {
-        System.out.println("Boys don't read '1984'.");
-    }
-}
-
-class House extends Building implements LivingHouse {
-    protected int neighbour;
-    protected String nameHome;
-
-    House() {
-        super("30", "16 line", 1938, "Kamov", true);
-    }
-
-    public void setNameHome(String nameHome) {
-        this.nameHome = nameHome;
-    }
-
-    public String getNameHome() {
-        return nameHome;
-    }
-
-    public void setNeighbour(int neighbour) {
-        this.neighbour = neighbour;
-    }
-
-    public int getNeighbour() {
-        return neighbour;
-    }
-
-    void hello() {
-        System.out.println("Hello!");
-    }
-
-    void goodBye() {
-        System.out.println("Goodbye(");
-    }
-
-    @Override
-    public void rentThisPlace() {
-        System.out.println("It' s living fuckin house!");
-    }
-
-    @Override
-    public void print2() {
-        System.out.println("Understand this ");
     }
 }
 
@@ -126,7 +25,7 @@ class PoliceDepartment extends Building {
     protected int guns;
 
     PoliceDepartment() {
-        super("Sovetskaya", "Sovetskaya, 30", 2006, "Trunov D.", false);
+        super("Kovalevskaya", "Kovalevskaya, 30", 2006, "Trunov D.", false);
     }
 
     void criminalsRobbers() {
@@ -185,7 +84,6 @@ class University extends Building {
     void numbersStudents() {
         System.out.println("Today in DSTU studies " + students + " students.");
     }
-
 }
 
 class ShoppingCenter extends Building {
@@ -254,33 +152,8 @@ class HighRiseBuilding extends Building {
     }
 }
 
-class Main13 {
+class MainBuilding {
     public static void main(String[] args) {
-        Library library = new Library();
-        library.setBooks(400);
-        library.setPersonal(10);
-        System.out.println(library);
-        System.out.println("Number of books : " + library.getBooks());
-        System.out.println("Number of personal : " + library.getPersonal());
-        library.bookRead();
-        library.comeToLibrary();
-        library.isCool();
-        library.print4();
-
-        System.out.println(" ");
-
-        House house = new House();
-        house.setNameHome("Arsena House");
-        house.setNeighbour(3);
-        System.out.println(house);
-        System.out.println("Name Home : " + house.getNameHome());
-        System.out.println("Neighbour : " + house.getNeighbour());
-        house.hello();
-        house.goodBye();
-        house.rentThisPlace();
-        house.print2();
-
-        System.out.println(" ");
 
         PoliceDepartment policeDepartment = new PoliceDepartment();
         policeDepartment.setCriminals(10);
@@ -323,6 +196,5 @@ class Main13 {
         System.out.println("Sex with this hor woman " + highRiseBuilding.isLivingWomanSex());
         highRiseBuilding.hello();
         highRiseBuilding.beautifulBuilding();
-
     }
 }
