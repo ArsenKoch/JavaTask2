@@ -1,10 +1,5 @@
-/**
- * Добавьте автоматическую нумерацию создания всех животных и наследников. Используйте при этом статическое поле.
- * Так же, для удобства, сгенерируйте классу Animal  метод toString(),
- * который выводил бы подробную информацию о животном (данные по всем полям, включая номер).
- * Вывод номера в метод display() не добавляйте.
- */
-public class Animals3 {
+
+public class AnimalsTask2 {
     static int count = 0;
     private final String type;
     protected String name;
@@ -14,7 +9,7 @@ public class Animals3 {
     private final boolean isWalk;
     private final boolean isSwim;
 
-    Animals3(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
+    AnimalsTask2(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -30,16 +25,13 @@ public class Animals3 {
         return this.name + " " + this.type + " " + this.age + " " + this.weight + " " + this.isFly + " " + this.isWalk + " " + this.isSwim + " " +
                 count;
     }
-
-
 }
 
-class Bird3 extends Animals3 {
-
+class BirdTask2 extends AnimalsTask2 {
     private String area;
     private boolean winterFly;
 
-    public Bird3() {
+    public BirdTask2() {
         super("Bird", null, 0, 0.0f, true, true, true);
     }
 
@@ -68,12 +60,11 @@ class Bird3 extends Animals3 {
     }
 }
 
-class Fish3 extends Animals3 {
-
-    private String squama;
+class FishTask2 extends AnimalsTask2 {
+    private String squamous;
     private boolean upStreamSwim;
 
-    public Fish3() {
+    public FishTask2() {
         super("Fish", null, 0, 0.0f, false, false, true);
     }
 
@@ -81,16 +72,16 @@ class Fish3 extends Animals3 {
         this.name = name;
     }
 
-    public void setSquama(String squama) {
-        this.squama = squama;
+    public void setSquamous(String squamous) {
+        this.squamous = squamous;
     }
 
     public void setUpStreamSwim(boolean upStreamSwim) {
         this.upStreamSwim = upStreamSwim;
     }
 
-    public String getSquama() {
-        return squama;
+    public String getSquamous() {
+        return squamous;
     }
 
     public boolean isUpStreamSwim() {
@@ -102,12 +93,12 @@ class Fish3 extends Animals3 {
     }
 }
 
-class Insect3 extends Animals3 {
+class InsectTask2 extends AnimalsTask2 {
 
     private int wingCount;
     private boolean likeJesus;
 
-    public Insect3() {
+    public InsectTask2() {
         super("Insect", null, 0, 0.0f, true, true, true);
     }
 
@@ -136,15 +127,14 @@ class Insect3 extends Animals3 {
     }
 }
 
-
-class Main2312 {
+class MainTask2 {
     public static void main(String[] args) {
-        Animals3 duck = new Animals3("Duck", "Duckas", 3, 5.8f, true, true, true);
+        AnimalsTask2 duck = new AnimalsTask2("Duck", "Donald", 3, 5.8f, true, true, true);
         System.out.println(duck);
 
-        Bird3 b = new Bird3();
+        BirdTask2 b = new BirdTask2();
         b.setName("Bob");
-        b.setArea("On ugs");
+        b.setArea("On the sea");
         b.setWinterFly(false);
         System.out.println(b);
         System.out.println(b.getArea());
@@ -152,16 +142,16 @@ class Main2312 {
         b.chirickChirick();
 
 
-        Fish3 f = new Fish3();
-        f.setName("Fishka");
-        f.setSquama("Big");
+        FishTask2 f = new FishTask2();
+        f.setName("Pike");
+        f.setSquamous("Big");
         f.setUpStreamSwim(true);
         System.out.println(f);
-        System.out.println(f.getSquama());
+        System.out.println(f.getSquamous());
         System.out.println(f.isUpStreamSwim());
         f.bulBul();
 
-        Insect3 i = new Insect3();
+        InsectTask2 i = new InsectTask2();
         i.setName("Insect Insectich");
         i.setWingCount(4);
         i.setLikeJesus(true);
@@ -171,4 +161,3 @@ class Main2312 {
         i.ggggg();
     }
 }
-

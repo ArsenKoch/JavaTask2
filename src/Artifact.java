@@ -26,8 +26,8 @@ public class Artifact {
 
         System.out.println(artifact1.number);
         System.out.println(" ");
-        System.out.println(artifact2.number+"\n"+artifact2.culture);
+        System.out.println(artifact2.number + "\n" + artifact2.culture);
         System.out.println(" ");
-        System.out.println(artifact3.number+"\n"+artifact3.culture+"\n"+ artifact3.century);
+        System.out.println(artifact3.number + "\n" + artifact3.culture + "\n" + artifact3.century);
     }
 }

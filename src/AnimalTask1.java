@@ -1,4 +1,4 @@
-public class Animal {
+public class AnimalTask1 {
     String type;
     String name;
     int age;
@@ -7,26 +7,21 @@ public class Animal {
     boolean isWalk;
     boolean isSwim;
 
-
     void display() {
         System.out.print(" Type: " + type + " , Name: " + name + " , Age: " + age + " , Weight: " + weight + " , IsFly: " + (isFly ? "yes" : "no"));
         System.out.println(" , isWalk : " + (isWalk ? "yes" : "no") + " , isSwim : " + (isSwim ? "yes" : "no"));
     }
 
-
-    String rename(String s) {
-        return name.replace(name, s);
+    void rename(String s) {
     }
-
-
 }
 
-class Main4 {
+class MainAnimalTask1 {
     public static void main(String[] args) {
-        Animal tiger = new Animal();
-        Animal sparrow = new Animal();
+        AnimalTask1 tiger = new AnimalTask1();
+        AnimalTask1 sparrow = new AnimalTask1();
 
-        tiger.type = "tiger";
+        tiger.type = "Tiger";
         tiger.name = "Artem";
         tiger.age = 15;
         tiger.weight = 300.6;
@@ -37,7 +32,7 @@ class Main4 {
         tiger.rename("Anton");
         tiger.display();
 
-        sparrow.type = " ыввы";
+        sparrow.type = "Pirate";
         sparrow.name = "Capitan Jack";
         sparrow.age = 3;
         sparrow.weight = 2;
@@ -45,8 +40,5 @@ class Main4 {
         sparrow.isWalk = true;
         sparrow.isFly = true;
         sparrow.display();
-
-
-
     }
 }

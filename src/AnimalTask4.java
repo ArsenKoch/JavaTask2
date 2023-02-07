@@ -1,18 +1,14 @@
-class Animals {
-    protected String type;
+
+public class AnimalTask4 {
+    private final String type;
     protected String name;
-    final private int age;
-    final private float weight;
-    final private boolean isFly;
-    final private boolean isWalk;
-    final private boolean isSwim;
+    private final int age;
+    private final float weight;
+    private final boolean isFly;
+    private final boolean isWalk;
+    private final boolean isSwim;
 
-    {
-        name = "No name";
-        type = "No type";
-    }
-
-    Animals(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
+    AnimalTask4(String type, String name, int age, float weight, boolean isFly, boolean isWalk, boolean isSwim) {
         this.type = type;
         this.name = name;
         this.age = age;
@@ -26,19 +22,17 @@ class Animals {
         System.out.print(" Type: " + type + " , Name: " + name + " , Age: " + age + " , Weight: " + weight + " , IsFly: " + (isFly ? "yes" : "no"));
         System.out.println(" , isWalk : " + (isWalk ? "yes" : "no") + " , isSwim : " + (isSwim ? "yes" : "no"));
     }
+
+    void InfoDescription() {
+        System.out.println("It's secret , bro!");
+    }
 }
 
-class Bird extends Animals {
-
+class BirdTask4 extends AnimalTask4 {
     private String area;
     private boolean winterFly;
 
-    {
-        name = "MARKIN";
-        type = "klon";
-    }
-
-    public Bird() {
+    public BirdTask4() {
         super("Bird", null, 0, 0.0f, true, true, true);
     }
 
@@ -67,17 +61,11 @@ class Bird extends Animals {
     }
 }
 
-class Fish extends Animals {
-
-    private String squama;
+class FishTask4 extends AnimalTask4 {
+    private String squamous;
     private boolean upStreamSwim;
 
-    {
-        name = "ne ebu";
-        type = "ti kto";
-    }
-
-    public Fish() {
+    public FishTask4() {
         super("Fish", null, 0, 0.0f, false, false, true);
     }
 
@@ -85,16 +73,16 @@ class Fish extends Animals {
         this.name = name;
     }
 
-    public void setSquama(String squama) {
-        this.squama = squama;
+    public void setSquamous(String squamous) {
+        this.squamous = squamous;
     }
 
     public void setUpStreamSwim(boolean upStreamSwim) {
         this.upStreamSwim = upStreamSwim;
     }
 
-    public String getSquama() {
-        return squama;
+    public String getSquamous() {
+        return squamous;
     }
 
     public boolean isUpStreamSwim() {
@@ -104,25 +92,18 @@ class Fish extends Animals {
     void bulBul() {
         System.out.println("Bul-bul");
     }
-
 }
 
-class Insect extends Animals {
-
+class InsectTask4 extends AnimalTask4 {
     private int wingCount;
     private boolean likeJesus;
 
-    {
-        name = "ne znau";
-        type = "Insect";
-    }
-
-    public Insect() {
+    public InsectTask4() {
         super("Insect", null, 0, 0.0f, true, true, true);
     }
 
     void ggggg() {
-        System.out.println("Ggggg");
+        System.out.println("G-g-g-g-g");
     }
 
     public void setName(String name) {
@@ -146,32 +127,31 @@ class Insect extends Animals {
     }
 }
 
-
-class Main23 {
+class MainTask4 {
     public static void main(String[] args) {
-        Animals duck = new Animals("Утка", "Утя", 3, 5.8f, true, true, true);
+        AnimalTask4 duck = new AnimalTask4("Duck", "Donald", 3, 5.8f, true, true, true);
         duck.display();
 
-        Bird b = new Bird();
+        BirdTask4 b = new BirdTask4();
         b.setName("Bob");
         b.display();
-        b.setArea("На югах");
+        b.setArea("On the sea");
         b.setWinterFly(false);
         System.out.println(b.getArea());
         System.out.println(b.isWinterFly());
         b.chirickChirick();
 
         Fish f = new Fish();
-        f.setName("Сельд");
+        f.setName("Pike");
         f.display();
-        f.setSquama("Крупная");
+        f.setSquamous("Big");
         f.setUpStreamSwim(true);
-        System.out.println(f.getSquama());
+        System.out.println(f.getSquamous());
         System.out.println(f.isUpStreamSwim());
         f.bulBul();
 
         Insect i = new Insect();
-        i.setName("Жук Жукыч");
+        i.setName("Insect Insectich");
         i.display();
         i.setWingCount(4);
         i.setLikeJesus(true);
