@@ -1,11 +1,11 @@
-public class WritingMaterials251 {
+public class WritingMaterials {
     protected String name;
     private final String color;
     private final int price;
     protected double length;
     private final boolean canDraw;
 
-    public WritingMaterials251(String name, String color, int price, double length, boolean canDraw) {
+    public WritingMaterials(String name, String color, int price, double length, boolean canDraw) {
         this.name = name;
         this.color = color;
         this.price = price;
@@ -18,7 +18,7 @@ public class WritingMaterials251 {
     }
 }
 
-class Pen extends WritingMaterials251 {
+class Pen extends WritingMaterials {
     int countColor;
     boolean auto;
 
@@ -59,7 +59,7 @@ class Pen extends WritingMaterials251 {
     }
 }
 
-class Ruler extends WritingMaterials251 {
+class Ruler extends WritingMaterials {
     boolean wood;
 
     public Ruler() {
@@ -98,7 +98,7 @@ class Ruler extends WritingMaterials251 {
     }
 }
 
-class Divider extends WritingMaterials251 {
+class Divider extends WritingMaterials {
     String dividerType;
     boolean metal;
 
@@ -137,12 +137,11 @@ class Divider extends WritingMaterials251 {
         System.out.println("Divider Type : " + dividerType);
         System.out.println("Metal : " + metal);
     }
-
 }
 
 class Main {
     public static void main(String[] args) {
-        WritingMaterials251 wm = new WritingMaterials251("Pen", "Red", 145, 15.6f, true);
+        WritingMaterials wm = new WritingMaterials("Pen", "Red", 145, 15.6f, true);
         wm.display();
 
         Pen p = new Pen();

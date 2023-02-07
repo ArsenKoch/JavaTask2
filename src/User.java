@@ -40,16 +40,14 @@ public class User {
     }
 
     public static void main(String[] args) {
-
         User user17 = new User("Angela", (short) 18, 156);
         User user12 = new User("Kristina", 157, (short) 18);
         User user13 = new User((short) 17, 190, "Rita");
         User user14 = new User(173, (short) 18, "Polina");
         User user15 = new User((short) 17, "Marina", 160);
-        User user16 = new User(180, "Kculya", (short) 19);
+        User user16 = new User(180, "Nina", (short) 19);
         System.out.println("Name : " + user13.name);
         System.out.println("Age : " + user13.age);
         System.out.println("Height : " + user13.height);
     }
 }
-

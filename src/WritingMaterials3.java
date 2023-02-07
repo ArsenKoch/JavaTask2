@@ -6,7 +6,7 @@ public class WritingMaterials3 {
     boolean canDraw;
 
     void display() {
-        System.out.println("Название: " + name + ", Цвет: " + color + ", Длина: " + length + ", Цена: " + price + ", Умеет рисовать: " + (canDraw ? "Да" : "Нет"));
+        System.out.println("Name: " + name + ", Color: " + color + ", Length: " + length + ", Price: " + price + ", Can draw: " + (canDraw ? "Yes" : "No"));
     }
 
     void replaceRod(String newColor) {
@@ -22,8 +22,8 @@ public class WritingMaterials3 {
     }
 
     void draw() {
-        if (canDraw) System.out.println(name + " провел линию. Ее цвет - " + color + ".");
-        else System.out.println(name + " не может ничего нарисовать.");
+        if (canDraw) System.out.println(name + " drew a line. Her color - " + color + ".");
+        else System.out.println(name + " can't draw anything.");
     }
 
     public void setName(String name) {
@@ -66,11 +66,12 @@ public class WritingMaterials3 {
         return canDraw;
     }
 }
-class Main3{
+
+class Main3 {
     public static void main(String[] args) {
         WritingMaterials3 pen = new WritingMaterials3();
-        pen.setName("ручка");
-        pen.setColor("Красный");
+        pen.setName("Pen");
+        pen.setColor("Red");
         pen.setLength(11.6);
         pen.setPrice(167);
         pen.setCanDraw(true);
@@ -80,7 +81,7 @@ class Main3{
         pen.display();
         pen.priceUp(23);
         pen.display();
-        pen.replaceRod("Синий");
+        pen.replaceRod("Blue");
         pen.draw();
         System.out.println(pen.getName());
         System.out.println(pen.getColor());
@@ -88,7 +89,4 @@ class Main3{
         System.out.println(pen.getPrice());
         System.out.println(pen.isCanDraw());
     }
-
 }
-
-
